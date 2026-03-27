@@ -201,7 +201,7 @@ function App() {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="space-y-8"
+              className="space-y-8 order-2 lg:order-1 text-center lg:text-left"
             >
                       <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/50 border border-slate-800 backdrop-blur-md">
                         <span className="w-2 h-2 rounded-full bg-[#8b5cf6] animate-pulse" />
@@ -220,7 +220,7 @@ function App() {
                         </p>
                       </div>
 
-                      <div className="flex flex-wrap items-center gap-6 text-slate-400">
+                      <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-slate-400">
                         <div className="flex items-center gap-2">
                           <MapPin size={20} className="text-[#8b5cf6]" />
                           <span className="text-lg font-medium">{t.location}</span>
@@ -234,7 +234,7 @@ function App() {
                         </div>
                       </div>
 
-                      <div className="flex items-center gap-4">
+                      <div className="flex items-center justify-center lg:justify-start gap-4">
                         <a 
                           href="https://wa.link/zzf0w8" 
                           target="_blank"
@@ -252,18 +252,34 @@ function App() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, ease: "easeOut" }}
-              className="relative flex justify-center lg:justify-end"
+              className="relative flex justify-center lg:justify-end order-1 lg:order-2"
             >
               {/* Profile Photo with Circle Border */}
-              <div className="relative w-80 h-80 lg:w-[500px] lg:h-[500px]">
+              <div className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-[500px] lg:h-[500px]">
                 {/* Dotted Border Circle */}
                 <div className="absolute inset-[-20px] rounded-full border-2 border-dashed border-slate-700/50 animate-[spin_60s_linear_infinite]" />
                 
+                {/* Animated Backlight */}
+                <motion.div 
+                  animate={{ 
+                    rotate: 360,
+                    scale: [1, 1.1, 1],
+                  }}
+                  transition={{ 
+                    rotate: { duration: 15, repeat: Infinity, ease: "linear" },
+                    scale: { duration: 5, repeat: Infinity, ease: "easeInOut" }
+                  }}
+                  className="absolute inset-[-15px] rounded-full blur-3xl opacity-40 z-0"
+                  style={{
+                    background: "conic-gradient(from 0deg, #8b5cf6, #06b6d4, #ec4899, #8b5cf6)"
+                  }}
+                />
+
                 {/* Main Image Container */}
                 <div className="w-full h-full rounded-full overflow-hidden border-8 border-slate-900 shadow-2xl relative z-10">
                   <img 
                     src="/img/capa.png" 
-                    alt="Dyuky" 
+                    alt="Caroline Weizenmann" 
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -273,7 +289,7 @@ function App() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5 }}
-                  className="absolute bottom-10 right-0 lg:right-[-20px] z-20 glass-card px-8 py-4 rounded-2xl shadow-2xl border border-white/10"
+                  className="absolute -bottom-6 left-1/2 -translate-x-1/2 lg:left-auto lg:right-[-20px] lg:bottom-10 lg:translate-x-0 z-20 glass-card px-8 py-4 rounded-2xl shadow-2xl border border-white/10 min-w-[160px] text-center"
                 >
                   <p className="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">{t.totalFollowers}</p>
                   <p className="text-3xl font-black text-white">+16.5K</p>
