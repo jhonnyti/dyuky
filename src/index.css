@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222.2 84% 4.9%; /* #0f172a */
+    --foreground: 210 40% 98%; /* #f8fafc */
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 263.4 93.3% 65.9%; /* #8b5cf6 - Roxo/Violeta */
+    --primary-foreground: 210 40% 98%;
+    --secondary: 188.1 91.2% 46.7%; /* #06b6d4 - Ciano */
+    --secondary-foreground: 210 40% 98%;
+    --muted: 215 20.2% 65.1%; /* #94a3b8 */
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 263.4 93.3% 65.9%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer components {
+  /* Efeito de Grade Tecnológica (Tech Grid) */
+  .tech-grid {
+    background-image: radial-gradient(rgba(56, 189, 248, 0.1) 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+
+  /* Efeitos de Brilho (Glow) de Fundo */
+  .glow-primary {
+    background-color: rgba(139, 92, 246, 0.2); /* Roxo/Violeta com transparência */
+    filter: blur(100px);
+  }
+
+  .glow-secondary {
+    background-color: rgba(6, 182, 212, 0.2); /* Ciano com transparência */
+    filter: blur(100px);
+  }
+
+  /* Cartão com efeito de vidro (Glassmorphism) */
+  .glass-card {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(148, 163, 184, 0.1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #0f172a; /* Slate escuro */
+    color: #f8fafc;
+    overflow-x: hidden;
+    font-family: 'Inter', sans-serif;
+  }
+}
